@@ -80,7 +80,12 @@ export const Template1: React.FC<Props> = props => {
       <div className="basic-info">
         {/* 头像 */}
         {!value?.avatar?.hidden && (
-          <Avatar avatarSrc={value?.avatar?.src} className="avatar" shape={value?.avatar?.shape} size={value?.avatar?.size} />
+          <Avatar
+            avatarSrc={value?.avatar?.src}
+            className="avatar"
+            shape={value?.avatar?.shape}
+            size={value?.avatar?.size}
+          />
         )}
         {/* 个人信息 */}
         <div className="profile">
@@ -239,12 +244,6 @@ export const Template1: React.FC<Props> = props => {
                     key={`${idx}`}
                   >
                     <b className="info-name">{skill.skill_name}</b>
-                    <Rate
-                      allowHalf
-                      disabled
-                      value={skill.skill_level / 20}
-                      className="skill-rate"
-                    />
                   </div>
                   {_.split(skill.skill_desc, '\n').map((d, idx) =>
                     d ? (
@@ -344,7 +343,10 @@ export const Template1: React.FC<Props> = props => {
                           </Tag>
                         )}
                       </div>
-                      <div className="section-detail">
+                      <div
+                        className="section-detail"
+                        style={{ display: project.project_desc }}
+                      >
                         <b>{i18n.get('项目描述')}：</b>
                         <span>{project.project_desc}</span>
                       </div>

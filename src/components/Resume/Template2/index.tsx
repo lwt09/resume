@@ -223,7 +223,7 @@ export const Template2: React.FC<Props> = props => {
             })}
           </Wrapper>
         ) : null}
-        <Wrapper
+        {/* <Wrapper
           title={i18n.get('自我介绍')}
           className="section section-aboutme"
           color={theme.color}
@@ -231,7 +231,7 @@ export const Template2: React.FC<Props> = props => {
           {aboutme.map((d, idx) => (
             <div key={`${idx}`}>{d}</div>
           ))}
-        </Wrapper>
+        </Wrapper> */}
         {/* 专业技能 */}
         {skillList?.length ? (
           <Wrapper
@@ -243,22 +243,28 @@ export const Template2: React.FC<Props> = props => {
             {skillList.map((skill, idx) => {
               const skills = _.split(skill.skill_desc, '\n').join('；');
               return skills ? (
-                <div className="skill-item" key={idx.toString()}>
-                  <span>
-                    <CheckCircleFilled
-                      style={{ color: '#ffc107', marginRight: '8px' }}
-                    />
-                    {skills}
-                  </span>
-                  {skill.skill_level && (
-                    <Rate
-                      allowHalf
-                      disabled
-                      value={skill.skill_level / 20}
-                      className="skill-rate"
-                    />
+                <React.Fragment key={`${idx}`}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      marginTop: '8px',
+                    }}
+                    key={`${idx}`}
+                  >
+                    <b className="info-name">{skill.skill_name}</b>
+                  </div>
+                  {_.split(skill.skill_desc, '\n').map((d, idx) =>
+                    d ? (
+                      <div className="skill-detail-item" key={`${idx}`}>
+                        <CheckCircleFilled
+                          style={{ color: '#ffc107', marginRight: '8px' }}
+                        />
+                        {d}
+                      </div>
+                    ) : null
                   )}
-                </div>
+                </React.Fragment>
               ) : null;
             })}
           </Wrapper>

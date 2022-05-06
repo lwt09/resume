@@ -225,15 +225,15 @@ export const Template3: React.FC<Props> = props => {
             })}
           </CardWrapper>
         ) : null}
-        <CardWrapper
+        {/* <CardWrapper
           title={i18n.get('自我介绍')}
           className="section section-aboutme"
           color={theme.color}
         >
-          {aboutme.map((d, idx) => (
-            <div key={`${idx}`}>{d}</div>
-          ))}
-        </CardWrapper>
+          {aboutme.length
+            ? aboutme.map((d, idx) => <div key={`${idx}`}>{d}</div>)
+            : null}
+        </CardWrapper> */}
         {/* 专业技能 */}
         {skillList?.length ? (
           <CardWrapper
@@ -245,22 +245,28 @@ export const Template3: React.FC<Props> = props => {
             {skillList.map((skill, idx) => {
               const skills = _.split(skill.skill_desc, '\n').join('；');
               return skills ? (
-                <div className="skill-item" key={idx.toString()}>
-                  <span>
-                    <CheckCircleFilled
-                      style={{ color: '#ffc107', marginRight: '8px' }}
-                    />
-                    {skills}
-                  </span>
-                  {skill.skill_level && (
-                    <Rate
-                      allowHalf
-                      disabled
-                      value={skill.skill_level / 20}
-                      className="skill-rate"
-                    />
+                <React.Fragment key={`${idx}`}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      marginTop: '8px',
+                    }}
+                    key={`${idx}`}
+                  >
+                    <b className="info-name">{skill.skill_name}</b>
+                  </div>
+                  {_.split(skill.skill_desc, '\n').map((d, idx) =>
+                    d ? (
+                      <div className="skill-detail-item" key={`${idx}`}>
+                        <CheckCircleFilled
+                          style={{ color: '#ffc107', marginRight: '8px' }}
+                        />
+                        {d}
+                      </div>
+                    ) : null
                   )}
-                </div>
+                </React.Fragment>
               ) : null;
             })}
           </CardWrapper>

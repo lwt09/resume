@@ -133,6 +133,11 @@ export const Page: React.FC = () => {
     };
   }, []);
 
+  const reload = () => {
+    const file = require('@/resume.json');
+    onThemeChange(file.theme);
+    onConfigChange(_.omit(file, 'theme'));
+  };
   const importConfig = (file: RcFile) => {
     if (window.FileReader) {
       const reader = new FileReader();
@@ -140,6 +145,7 @@ export const Page: React.FC = () => {
         try {
           if (reader.result) {
             // @ts-ignore
+            debugger;
             const newConfig: ConfigProps = JSON.parse(reader.result);
             onThemeChange(newConfig.theme);
             onConfigChange(_.omit(newConfig, 'theme'));
@@ -236,8 +242,11 @@ export const Page: React.FC = () => {
                   <Button type="primary" onClick={exportConfig} key="3">
                     {i18n.get('保存简历')}
                   </Button>
+                  <Button type="primary" onClick={reload} key="3">
+                    {'更新简历'}
+                  </Button>
                   <Upload
-                    accept=".json"
+                    action="./resume.json"
                     showUploadList={false}
                     beforeUpload={importConfig}
                     key={'2'}

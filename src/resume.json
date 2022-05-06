@@ -1,0 +1,107 @@
+{
+  "titleNameMap": {
+    "educationList": "教育背景",
+    "workExpList": "工作经历",
+    "projectList": "项目经历",
+    "skillList": "个人技能",
+    "awardList": "更多信息",
+    "workList": "个人作品"
+  },
+  "avatar": { "hidden": true },
+  "profile": {
+    "name": "林文涛",
+    "email": "1102757555@qq.com",
+    "mobile": "15005008673",
+    "github": "https://github.com/lwt09",
+    "zhihu": "",
+    "workExpYear": "1年",
+    "workPlace": "北京",
+    "positionTitle": "前端工程师"
+  },
+  "educationList": [
+    {
+      "edu_time": ["2017.09", "2021.06"],
+      "school": "福州大学",
+      "major": "计算机科学与技术",
+      "academic_degree": "本科",
+      "dataIndex": 0
+    }
+  ],
+  "awardList": [
+    { "award_time": "2017.03", "award_info": "全国电脑制作活动 全国三等奖" }
+  ],
+  "workExpList": [
+    {
+      "company_name": "在线途游(北京)",
+      "department_name": "数据平台部、OA部",
+      "work_time": ["2021.04", "至今"],
+      "work_desc": "前端开发人员，参与8+个前端项目的开发与维护",
+      "dataIndex": 0
+    },
+    {
+      "company_name": "福建博思软件股份有限公司",
+      "department_name": "",
+      "work_time": ["2020.07", "2020.12"],
+      "work_desc": "前端实习生，实习期间完成人事后台管理系统",
+      "dataIndex": 2
+    }
+  ],
+  "skillList": [
+    {
+      "skill_name": "1. HTML、CSS、Javascript、ES6、jQuery",
+      "dataIndex": 0,
+      "skill_level": 0,
+      "skill_desc": "能够脱离框架独立开发"
+    },
+    {
+      "skill_name": "2. 熟练使用 Vue2 / Vue3 全家桶",
+      "dataIndex": 1,
+      "skill_level": 0,
+      "skill_desc": "了解Vue3源码，手写mini-vue复现vue3核心功能"
+    },
+    {
+      "skill_name": "3. 前端工程化(webpack 、rollup、vite)",
+      "skill_level": 0,
+      "skill_desc": "使用工具完成前端项目/库的搭建与优化",
+      "dataIndex": 2
+    },
+    {
+      "skill_name": "4. 使用 Node.js、sql操作、Linux",
+      "skill_level": 0,
+      "skill_desc": "了解服务端基础"
+    }
+  ],
+  "projectList": [
+    {
+      "project_name": "Growth Analytics",
+      "project_role": "核心开发者",
+      "project_time": "2021.07 - 至今",
+      "project_desc": "Growth Analytics 是公司BI部门自研的数据增长分析系统，项目基于Vue2全家桶，开发至今已经为公司100+项目组提供了数据支持的服务。",
+      "project_content": "\n1.负责日常功能迭代与code review。 \n2.开发数据报表可视化核心功能，设计高可复用业务组件。\n3.通过websocket配合eventBus做到双端异步通信，实现报表数据异步计算与缓存。\n4.拆分系统整体权限粒度，由项目组转为游戏；项目组打点功能开发。 \n5.通过webpack对项目进行资源、性能优化。 "
+    },
+    {
+      "project_name": "OA相关工作",
+      "project_role": "前端开发人员",
+      "project_time": "2021.07 - 至今",
+      "project_desc": "部门主要开发OA相关功能，包括结算、报销、对公付款、客服等。(采用技术：Vue2全家桶)",
+      "project_content": "1.负责项目的从零搭建。 2.负责全项目权限管理与中台系统单点登录逻辑的开发。  3.负责日常业务功能的迭代与code review。 4.产出业务、维护文档。 "
+    },
+    {
+      "project_name": "官网开发",
+      "project_role": "核心开发者",
+      "project_time": "2021.09 - 2021.11",
+      "project_desc": "公司移动端、PC端官网。公司子游戏移动端、PC端官网。(采用技术：公司PC端官网vue2；其余官网采用原生+jquery)",
+      "project_content": "1. 采用vw+rem响应式开发。 2.接入swiper与animate设计动效。 "
+    },
+    {
+      "project_name": "美术供应商管理项目",
+      "project_role": "前端负责人",
+      "project_time": "2022.03 - 至今",
+      "project_desc": "",
+      "project_content": "项目为公司美术供应商管理系统，包括供应商管理、作品上传(华为云存储)、作品管理、作品评分等模块。(采用技术：Vue2全家桶) "
+    }
+  ],
+  "workList": [],
+  "aboutme": { "aboutme_desc": "" },
+  "theme": { "color": "rgba(39, 92, 156, 1)", "tagColor": "#8bc34a" }
+}
