@@ -1,7 +1,8 @@
 import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { Button, Affix, Upload, Spin, message, Alert, Modal } from 'antd';
-import { RcFile } from 'antd/lib/upload';
+import type { RcFile } from 'antd/lib/upload';
 import _ from 'lodash-es';
+import qs from 'query-string';
 import { getLanguage, getLocale } from '@/locale';
 import { useModeSwitcher } from '@/hooks/useModeSwitcher';
 import { getDefaultTitleNameMap } from '@/datas/constant';
@@ -14,7 +15,7 @@ import { getConfig, saveToLocalStorage } from '@/helpers/store-to-local';
 import { fetchResume } from '@/helpers/fetch-resume';
 import { Drawer } from './Drawer';
 import { Resume } from './Resume';
-import { ResumeConfig, ThemeConfig } from './types';
+import type { ResumeConfig, ThemeConfig } from './types';
 import './index.less';
 
 export const Page: React.FC = () => {
@@ -28,23 +29,49 @@ export const Page: React.FC = () => {
   const query = getSearchObj();
   const [config, setConfig] = useState<ResumeConfig>();
   const [loading, updateLoading] = useState<boolean>(true);
-  const [template, updateTemplate] = useState<string>('template1');
   const [theme, setTheme] = useState<ThemeConfig>({
     color: '#2f5785',
     tagColor: '#8bc34a',
   });
+
+  useEffect(() => {
+    const {
+      pathname,
+      hash: currentHash,
+      search: currentSearch,
+    } = window.location;
+    const hash = currentHash === '#/' ? '' : currentHash;
+    const searchObj = qs.parse(currentSearch);
+    if (!searchObj.template) {
+      const search = qs.stringify({
+        template: config?.template || 'template1',
+        ...qs.parse(currentSearch),
+      });
+
+      window.location.href = `${pathname}?${search}${hash}`;
+    }
+  }, [config]);
+
+  const updateTemplate = (value: string) => {
+    const {
+      pathname,
+      hash: currentHash,
+      search: currentSearch,
+    } = window.location;
+    const hash = currentHash === '#/' ? '' : currentHash;
+    const search = qs.stringify({
+      ...qs.parse(currentSearch),
+      template: value,
+    });
+
+    window.location.href = `${pathname}?${search}${hash}`;
+  };
 
   const changeConfig = (v: Partial<ResumeConfig>) => {
     setConfig(
       _.assign({}, { titleNameMap: getDefaultTitleNameMap({ i18n }) }, v)
     );
   };
-
-  useEffect(() => {
-    if (query.template) {
-      updateTemplate(query.template as string);
-    }
-  }, []);
 
   useEffect(() => {
     const user = (query.user || '') as string;
@@ -221,7 +248,11 @@ export const Page: React.FC = () => {
         )}
         <div className="page">
           {config && (
-            <Resume value={config} theme={theme} template={template} />
+            <Resume
+              value={config}
+              theme={theme}
+              template={query.template || 'template1'}
+            />
           )}
           {mode === 'edit' && (
             <React.Fragment>
@@ -232,14 +263,13 @@ export const Page: React.FC = () => {
                     onValueChange={onConfigChange}
                     theme={theme}
                     onThemeChange={onThemeChange}
-                    template={template}
+                    template={query.template || 'template1'}
                     onTemplateChange={updateTemplate}
-                    key={'1'}
                   />
-                  <Button type="primary" onClick={copyConfig} key="3">
+                  <Button type="primary" onClick={copyConfig}>
                     {i18n.get('复制配置')}
                   </Button>
-                  <Button type="primary" onClick={exportConfig} key="3">
+                  <Button type="primary" onClick={exportConfig}>
                     {i18n.get('保存简历')}
                   </Button>
                   <Button type="primary" onClick={reload} key="3">
@@ -249,13 +279,12 @@ export const Page: React.FC = () => {
                     action="./resume.json"
                     showUploadList={false}
                     beforeUpload={importConfig}
-                    key={'2'}
                   >
                     <Button className="btn-upload">
                       {i18n.get('导入配置')}
                     </Button>
                   </Upload>
-                  <Button type="primary" onClick={() => window.print()} key="4">
+                  <Button type="primary" onClick={() => window.print()}>
                     {i18n.get('PDF 下载')}
                   </Button>
                 </Button.Group>

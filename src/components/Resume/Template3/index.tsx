@@ -15,7 +15,7 @@ import {
 import _ from 'lodash-es';
 import { getLocale } from '@/locale';
 import { getDefaultTitleNameMap } from '@/datas/constant';
-import { ResumeConfig, ThemeConfig } from '../../types';
+import type { ResumeConfig, ThemeConfig } from '../../types';
 import './index.less';
 
 type Props = {
@@ -148,7 +148,7 @@ export const Template3: React.FC<Props> = props => {
                   style={{ color: theme.color, opacity: 0.85 }}
                 />
                 <span>
-                  {i18n.get('工作地')}: {profile.workPlace}
+                  {i18n.get('期望工作地')}: {profile.workPlace}
                 </span>
               </div>
             )}

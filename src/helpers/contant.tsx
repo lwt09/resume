@@ -11,7 +11,7 @@ import {
   ScheduleTwoTone,
 } from '@ant-design/icons';
 import _ from 'lodash-es';
-import { ResumeConfig } from '@/components/types';
+import type { ResumeConfig } from '@/components/types';
 
 /**
  * ① 内置的简历模块
@@ -71,7 +71,10 @@ export const CONTENT_OF_MODULE = ({ i18n }) => {
         displayName: i18n.get('头像形状'),
         cfg: {
           defaultValue: 'circle',
-          options: [{ value: 'circle', label: i18n.get('圆形') }, { value: 'square', label: i18n.get('方形') }],
+          options: [
+            { value: 'circle', label: i18n.get('圆形') },
+            { value: 'square', label: i18n.get('方形') },
+          ],
         },
       },
     ],
@@ -125,7 +128,7 @@ export const CONTENT_OF_MODULE = ({ i18n }) => {
       {
         type: 'input',
         attributeId: 'workPlace',
-        displayName: i18n.get('工作地'),
+        displayName: i18n.get('期望工作地'),
       },
       {
         type: 'input',
@@ -156,6 +159,13 @@ export const CONTENT_OF_MODULE = ({ i18n }) => {
     projectList: [
       {
         type: 'input',
+        attributeId: 'project_time',
+        displayName: i18n.get('起止时间'),
+        formItemProps: { rules: [{ required: true }] },
+        // cfg: { picker: 'month' },
+      },
+      {
+        type: 'input',
         attributeId: 'project_name',
         displayName: i18n.get('项目名称'),
       },
@@ -169,6 +179,18 @@ export const CONTENT_OF_MODULE = ({ i18n }) => {
         attributeId: 'project_desc',
         displayName: i18n.get('项目描述'),
         cfg: { autoSize: { minRows: 8 }, showCount: true },
+      },
+      {
+        type: 'textArea',
+        attributeId: 'project_content',
+        displayName: i18n.get('主要工作'),
+        cfg: {
+          autoSize: { minRows: 8 },
+          showCount: true,
+        },
+        formItemProps: {
+          style: { marginTop: 25 },
+        },
       },
     ],
     workExpList: [
