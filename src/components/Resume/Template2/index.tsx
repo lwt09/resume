@@ -10,6 +10,7 @@ import {
   EnvironmentFilled,
   HeartFilled,
   CrownFilled,
+  TrophyFilled,
 } from '@ant-design/icons';
 import cx from 'classnames';
 import _ from 'lodash-es';
@@ -66,6 +67,9 @@ export const Template2: React.FC<Props> = props => {
 
   /** 更多信息 */
   const awardList = _.get(value, 'awardList');
+  const awardList2 = _.get(value, 'awardList2');
+
+  console.log(awardList2);
 
   /** 作品 */
   const workList = _.get(value, 'workList');
@@ -106,8 +110,14 @@ export const Template2: React.FC<Props> = props => {
                 </div>
               )}
               {profile?.zhihu && (
-                <div className="github">
-                  <ZhihuCircleFilled
+                <div
+                  className="github"
+                  style={{
+                    display: 'flex',
+                    marginRight: '21px',
+                  }}
+                >
+                  <ScheduleFilled
                     style={{ color: theme.color, opacity: 0.85 }}
                   />
                   <span
@@ -269,7 +279,7 @@ export const Template2: React.FC<Props> = props => {
             })}
           </Wrapper>
         ) : null}
-        {/* {awardList?.length ? (
+        {awardList?.length ? (
           <Wrapper
             // title="更多信息"
             title={titleNameMap.awardList}
@@ -292,7 +302,7 @@ export const Template2: React.FC<Props> = props => {
               );
             })}
           </Wrapper>
-        ) : null} */}
+        ) : null}
       </div>
       <div className="main-info">
         {workExpList?.length ? (
@@ -349,18 +359,60 @@ export const Template2: React.FC<Props> = props => {
                     </div>
                     <div className="section-detail">
                       <span>{i18n.get('项目描述')}：</span>
-                      <span>{project.project_desc}</span>
+                      <span className="project-detail">
+                        {project.project_desc}
+                      </span>
                     </div>
+                    {project.project_difficultily ? (
+                      <div className="section-detail">
+                        <span>{i18n.get('采用技术')}：</span>
+                        <span className="project-content">
+                          {project.project_skill}
+                        </span>
+                      </div>
+                    ) : null}
                     <div className="section-detail">
                       <span>{i18n.get('主要工作')}：</span>
                       <span className="project-content">
                         {project.project_content}
                       </span>
                     </div>
+                    {project.project_difficultily ? (
+                      <div className="section-detail">
+                        <span>{i18n.get('项目难点')}：</span>
+                        <span className="project-content">
+                          {project.project_difficultily}
+                        </span>
+                      </div>
+                    ) : null}
                   </div>
                 ) : null
               )}
             </div>
+          </Wrapper>
+        ) : null}
+
+        {awardList2?.length ? (
+          <Wrapper
+            title="其他经历"
+            className="section section-award"
+            color={theme.color}
+          >
+            {awardList2.map((award, idx) => {
+              return (
+                <div key={idx.toString()}>
+                  <TrophyFilled
+                    style={{ color: '#ffc107', marginRight: '8px' }}
+                  />
+                  <span className="info-name">{award.award_info}</span>
+                  {award.award_time && (
+                    <span className="sub-info award-time">
+                      ({award.award_time})
+                    </span>
+                  )}
+                </div>
+              );
+            })}
           </Wrapper>
         ) : null}
       </div>

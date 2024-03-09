@@ -11,6 +11,7 @@ import {
   CrownFilled,
   EnvironmentFilled,
   HeartFilled,
+  CopyOutlined,
 } from '@ant-design/icons';
 import _ from 'lodash-es';
 import { getLocale } from '@/locale';
@@ -118,9 +119,7 @@ export const Template1: React.FC<Props> = props => {
             )}
             {profile?.zhihu && (
               <div className="github">
-                <ZhihuCircleFilled
-                  style={{ color: theme.color, opacity: 0.85 }}
-                />
+                <CopyOutlined style={{ color: theme.color, opacity: 0.85 }} />
                 <span
                   style={{ cursor: 'pointer' }}
                   onClick={() => {

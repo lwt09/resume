@@ -1,0 +1,130 @@
+{
+  "titleNameMap": {
+    "educationList": "教育背景",
+    "workExpList": "工作经历",
+    "projectList": "项目经历",
+    "skillList": "个人技能",
+    "awardList": "更多信息",
+    "workList": "个人作品"
+  },
+  "avatar": { "hidden": false, "src": "/fy.jpg" },
+  "profile": {
+    "name": "方圆",
+    "email": "413648812@qq.com",
+    "mobile": "18810738717",
+    "github": "",
+    "zhihu": "",
+    "workExpYear": "",
+    "workPlace": "",
+    "positionTitle": "前端工程师-实习"
+  },
+  "educationList": [
+    {
+      "edu_time": ["2017.09", "2022.06"],
+      "school": "北方工业大学",
+      "major": "通信工程",
+      "academic_degree": "本科",
+      "dataIndex": 0
+    },
+    {
+      "edu_time": ["2022.09", "至今"],
+      "school": "北京邮电大学",
+      "major": "光电信息工程（研究生）",
+      "dataIndex": 1
+    }
+  ],
+  "awardList": [
+    {
+      "award_time": "2019-2020",
+      "award_info": "中国教育机器人大赛 机器人创意设计和制作项目一等奖",
+      "dataIndex": 0
+    },
+    {
+      "award_time": "2020-2021",
+      "award_info": "大创发表了期刊《基于FPGA的基带传输系统设计》"
+    },
+    {
+      "award_time": "2020-2021",
+      "award_info": "“大唐杯”北京大学生移动通信工程技术大赛 省部级A(项目类) 三等奖 团体"
+    },
+    {
+      "award_time": "2020-2021",
+      "award_info": "“蓝桥杯”全国软件和信息技术专业人才大赛北京赛区个人赛电子类 省部级A(项目类) 二等奖 个 人"
+    },
+    {
+      "award_time": "2020-2021",
+      "award_info": "2020北京市大学生创新创业训练计划项目评比三等奖"
+    }
+  ],
+  "workExpList": [],
+  "skillList": [
+    {
+      "skill_name": "1. 熟练运用原生JavaScript代码编写程序，熟悉ES6新特性。",
+      "dataIndex": 0,
+      "skill_level": 0,
+      "skill_desc": "具备扎实的基本功"
+    },
+    {
+      "skill_name": "2. HTML5、CSS3、jQuery、ajax",
+      "skill_level": 0,
+      "skill_desc": "能够脱离框架独立开发",
+      "dataIndex": 1
+    },
+    {
+      "skill_name": "3. 熟练使用 vue2 全家桶",
+      "skill_level": 0,
+      "skill_desc": "掌握 vue2、vue-router、vuex、axios、element-ui、echarts 等工具配合框架快速开发",
+      "dataIndex": 2
+    },
+    {
+      "skill_name": "4. CET-6级、多次获得校级荣誉及奖学金",
+      "skill_level": 0,
+      "skill_desc": "自学能力较强，对学习抱有热情",
+      "dataIndex": 3
+    },
+    {
+      "skill_name": "5. 具备良好的沟通能力，有较强的文字综合和表达能力",
+      "dataIndex": 4,
+      "skill_level": 0,
+      "skill_desc": "能够快速的融入团队，降低沟通成本，掌握ps等基本办公技能"
+    }
+  ],
+  "projectList": [
+    {
+      "project_name": "vue-element 电商",
+      "project_role": "个人项目",
+      "project_time": "2022.04 - 2022.06",
+      "project_desc": "电商项目。主要采用技术栈：vue2全家桶(vue-router、vuex)+ element-ui + axios + echarts。",
+      "project_content": "\n1.负责系统核心功能迭代。\n2.抽离高可复用的组件提高开发效率。\n3.通过echarts完成初步数据可视化处理。 ",
+      "dataIndex": 0
+    },
+    {
+      "project_time": "2022.01 - 2022.03",
+      "project_name": "h5 页面开发",
+      "project_role": "个人项目",
+      "project_desc": "开发 h5 交互页面。",
+      "project_content": "\n1.通过开发h5页面，快速熟悉原生页面开发流程。\n2.尝试有意思的js交互，提高用户体验",
+      "dataIndex": 1
+    }
+  ],
+  "workList": [],
+  "aboutme": { "aboutme_desc": "" },
+  "theme": { "color": "#2f5785", "tagColor": "#8bc34a" },
+  "awardList2": [
+    {
+      "award_time": "",
+      "award_info": "北方工业大学CMC街舞社locking队管理人员之一，参与组织、表演校内迎新晚会与元旦晚会",
+      "dataIndex": 0
+    },
+    {
+      "award_time": "",
+      "award_info": "以locking、jazz风格参加校外街舞比赛",
+      "dataIndex": 0
+    },
+    {
+      "award_time": "",
+      "award_info": "在本科期间多次参与实习与兼职，曾担任辅导班培训讲师、街舞家教等",
+      "dataIndex": 0
+    }
+  ]
+}

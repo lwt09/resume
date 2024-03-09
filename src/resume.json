@@ -7,14 +7,14 @@
     "awardList": "更多信息",
     "workList": "个人作品"
   },
-  "avatar": { "hidden": true },
+  "avatar": { "hidden": true, "src": "/fy.jpg" },
   "profile": {
     "name": "林文涛",
     "email": "1102757555@qq.com",
     "mobile": "15005008673",
     "github": "https://github.com/lwt09",
-    "zhihu": "",
-    "workExpYear": "1年",
+    "zhihu": "https://juejin.cn/user/4318537403343512",
+    "workExpYear": "2年",
     "workPlace": "北京",
     "positionTitle": "前端工程师"
   },
@@ -32,10 +32,17 @@
   ],
   "workExpList": [
     {
+      "company_name": "启明合心",
+      "department_name": "",
+      "work_time": ["2022.04", "至今"],
+      "work_desc": "前端工程师，参与7+个前端项目的开发 (业务项目+组件库项目)，同时独立负责公司egg.js服务端开发",
+      "dataIndex": 0
+    },
+    {
       "company_name": "在线途游(北京)",
       "department_name": "数据平台部、OA部",
-      "work_time": ["2021.04", "至今"],
-      "work_desc": "前端开发人员，参与8+个前端项目的开发与维护",
+      "work_time": ["2021.04", "2022.04"],
+      "work_desc": "前端开发人员，参与8+个前端项目的开发与维护 (官网+OA+BI数据可视化)",
       "dataIndex": 0
     },
     {
@@ -48,7 +55,7 @@
   ],
   "skillList": [
     {
-      "skill_name": "1. HTML、CSS、Javascript、ES6、jQuery",
+      "skill_name": "1. HTML、CSS、Javascript、ES6、jQuery、TypeScript",
       "dataIndex": 0,
       "skill_level": 0,
       "skill_desc": "能够脱离框架独立开发"
@@ -60,29 +67,88 @@
       "skill_desc": "了解Vue3源码，手写mini-vue复现vue3核心功能"
     },
     {
-      "skill_name": "3. 前端工程化(webpack 、rollup、vite)",
+      "skill_name": "3. 了解 React 技术生态",
+      "dataIndex": 1,
       "skill_level": 0,
-      "skill_desc": "使用工具完成前端项目/库的搭建与优化",
+      "skill_desc": "掌握React技术栈基本开发流程"
+    },
+    {
+      "skill_name": "4. 前端工程化(webpack 、rollup、vite)",
+      "skill_level": 0,
+      "skill_desc": "使用工具完成前端项目/库的搭建与优化，配合业务完成相应插件的开发",
       "dataIndex": 2
     },
     {
-      "skill_name": "4. 使用 Node.js、sql操作、Linux",
+      "skill_name": "5. 熟练使用 Node.js、egg.js，掌握mysql、redis、mongodb、Linux、Nginx",
       "skill_level": 0,
-      "skill_desc": "了解服务端基础"
+      "skill_desc": "独立使用egg.js维护过公司服务端项目"
     }
   ],
   "projectList": [
     {
+      "project_name": "XDOC 内容数字化系统",
+      "project_role": "全栈负责人",
+      "project_time": "2022.04 - 至今",
+      "project_desc": "Word/PDF/FBD 等输入物通过算法生成 html , 人工通过ckeditor编辑器进行标注辅助生成固定节点的 json 、docx等产物。",
+      "project_skill": "\n前端：vue2全家桶 typescript 富文本编辑器组件库 katex.js。\n服务端：Node(egg.js) redis mongodb mysql2  typescript。",
+      "project_content": "1. 全栈负责人，负责日常需求的迭代，维护功能服务稳定性。2. 维护开发、业务文档",
+      "project_difficultily": "json防火墙、html2json设计、日志打点记录组件、权限管理。"
+    },
+    {
+      "project_name": "Ckeditor 公司编富文本辑器组件库",
+      "project_role": "前端负责人",
+      "project_time": "2022.06 - 至今",
+      "project_desc": "富文本编辑器组件库，为多个渲染平台定制需要的富文本编辑器。",
+      "project_skill": "vue2全家桶。",
+      "project_content": "独立负责该前端组件库项目，至今已公司内部迭代180+个版本，为12个渲染平台提供富文本支持。",
+      "project_difficultily": "自定义plugin（图片填空/划块 + 选项/层级标注)、自定义数据结构 (latex大括号等数据结构）。"
+    },
+    {
+      "project_name": "Html2ppt 编辑器",
+      "project_role": "前端开发人员",
+      "project_time": "2022.08 - 至今",
+      "project_desc": "提供对 html 进行人工快捷操作的能力，大批量操作 dom ，大幅度降低后续 html 产出 ppt 时再需要调板的时间。",
+      "project_skill": "vue2全家桶。",
+      "project_content": "1. 配合算法，完成自动化 html 转 ppt 。2. 完成如复杂表格的快捷处理，手写合并单元格、拆分单元格等定制化功能。",
+      "project_difficultily": "自动分页功能、表格dom、图片dom的大批量处理。"
+    },
+    {
+      "project_name": "图库系统",
+      "project_role": "前端负责人",
+      "project_time": "2022.11 - 2022.12",
+      "project_desc": "人工辅助算法进行筛选图片，基于选中的图片二创生成 tif / eps 新图。",
+      "project_skill": "vue3(setup) element-plus vite vueuse pinia typescript pnpm。",
+      "project_content": "1. 独立开发，主要负责技术选型、需求开发。2. 主要模块包括工作台、图库列表、匹配图片列表、权限管理。",
+      "project_difficultily": "虚拟列表、懒加载组件、新技术栈兼容问题。"
+    },
+    {
+      "project_name": "公司 monorepo 组件库",
+      "project_role": "前端负责人",
+      "project_time": "2022.12 - 至今",
+      "project_desc": "提供各个平台可以复用的组件",
+      "project_skill": "vue2全家桶。",
+      "project_content": "提供全平台公用的json-tree等抽象化组件，提高代码复用性。",
+      "project_difficultily": "图片划块、业务json-tree。"
+    },
+    {
+      "project_name": "公司各种后台管理系统",
+      "project_role": "前端开发人员",
+      "project_time": "2022.4 - 至今",
+      "project_desc": "维护公司各种后台管理系统。",
+      "project_skill": "vue2全家桶。",
+      "project_content": "工单、客户端、自助获客-客户端、组稿、出版等后端管理系统，维护日常功能开发。"
+    },
+    {
       "project_name": "Growth Analytics",
       "project_role": "核心开发者",
-      "project_time": "2021.07 - 至今",
+      "project_time": "2021.07 - 2022.04",
       "project_desc": "Growth Analytics 是公司BI部门自研的数据增长分析系统，项目基于Vue2全家桶，开发至今已经为公司100+项目组提供了数据支持的服务。",
       "project_content": "\n1.负责日常功能迭代与code review。 \n2.开发数据报表可视化核心功能，设计高可复用业务组件。\n3.通过websocket配合eventBus做到双端异步通信，实现报表数据异步计算与缓存。\n4.拆分系统整体权限粒度，由项目组转为游戏；项目组打点功能开发。 \n5.通过webpack对项目进行资源、性能优化。 "
     },
     {
       "project_name": "OA相关工作",
       "project_role": "前端开发人员",
-      "project_time": "2021.07 - 至今",
+      "project_time": "2021.07 - 2022.04",
       "project_desc": "部门主要开发OA相关功能，包括结算、报销、对公付款、客服等。(采用技术：Vue2全家桶)",
       "project_content": "1.负责项目的从零搭建。 2.负责全项目权限管理与中台系统单点登录逻辑的开发。  3.负责日常业务功能的迭代与code review。 4.产出业务、维护文档。 "
     },
@@ -96,9 +162,16 @@
     {
       "project_name": "美术供应商管理项目",
       "project_role": "前端负责人",
-      "project_time": "2022.03 - 至今",
-      "project_desc": "",
-      "project_content": "项目为公司美术供应商管理系统，包括供应商管理、作品上传(华为云存储)、作品管理、作品评分等模块。(采用技术：Vue2全家桶) "
+      "project_time": "2022.03 - 2022.04",
+      "project_desc": "项目为公司美术供应商管理系统。(采用技术：Vue2全家桶)",
+      "project_content": "工作内容包括供应商管理、作品上传(华为云存储)、作品管理、作品评分等模块。"
+    },
+    {
+      "project_name": "mini-vue",
+      "project_role": "个人独立项目",
+      "project_time": "2022.04 - 2022.05",
+      "project_desc": "尝试手写vue3源码",
+      "project_content": "目前完成vue3源码的 runtime 运行时模块与 reactivity 响应式模块。"
     }
   ],
   "workList": [],

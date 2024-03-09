@@ -1,0 +1,34 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  display: none;
+  left: 0;
+  right: 0;
+  padding-top: 24px;
+}
+footer > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  background: #273f75;
+  color: rgba(255, 255, 255, 0.85);
+}
+footer a {
+  color: rgba(255, 255, 255, 0.85);
+}
+footer a:hover {
+  color: #ffffff;
+}
+footer .action-link {
+  margin: 0 4px;
+}
+footer .action-link:hover {
+  cursor: pointer;
+}
+footer .action-link:first-of-type {
+  margin-left: 12px;
+}
+footer .author {
+  margin: 0 4px;
+}

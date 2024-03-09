@@ -172,7 +172,6 @@ export const Page: React.FC = () => {
         try {
           if (reader.result) {
             // @ts-ignore
-            debugger;
             const newConfig: ConfigProps = JSON.parse(reader.result);
             onThemeChange(newConfig.theme);
             onConfigChange(_.omit(newConfig, 'theme'));
@@ -212,7 +211,7 @@ export const Page: React.FC = () => {
   return (
     <React.Fragment>
       <Spin spinning={loading}>
-        {mode === 'edit' && (
+        {/* {mode === 'edit' && (
           <Alert
             showIcon={false}
             message={
@@ -245,7 +244,7 @@ export const Page: React.FC = () => {
             banner
             closable
           />
-        )}
+        )} */}
         <div className="page">
           {config && (
             <Resume
